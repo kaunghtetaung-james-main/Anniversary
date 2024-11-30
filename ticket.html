@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resized Image</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0; /* Add space at the top and bottom */
+      background-color: #f0f0f0;
+      height: 100vh; /* Full viewport height */
+      box-sizing: border-box; /* Ensures padding is included in height calculation */
+    }
+
+    img {
+      width: 30%; /* Reduced the image size to 30% of the screen width */
+      height: auto; /* Maintain aspect ratio */
+      border: 2px solid #000; /* Optional: Add a border for visual effect */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+    }
+  </style>
+</head>
+<body>
+  <img src="ticket1.jpg" alt="Resized description of the image">
+
+  <script>
+    // Set a timeout to automatically redirect after 5 seconds (5000 milliseconds)
+    setTimeout(function() {
+      window.location.href = "time.html";  // Replace "nextPage.html" with the URL of the next page
+    }, 5000); // 5000 milliseconds = 5 seconds
+  </script>
+</body>
+</html>

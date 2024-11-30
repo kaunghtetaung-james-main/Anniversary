@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Text Fade</title>
+  <style>
+    /* Body setup */
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    /* Style for the text */
+    .dynamic-fade-text {
+      font-size: 32px;
+      font-weight: bold;
+      color: #4CAF50;
+      opacity: 0; /* Start as invisible */
+      margin: 10px 0;
+      position: absolute; /* To center the text */
+    }
+
+    /* Animation keyframes for fading in from center and fading out */
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start below */
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(0); /* Move to center */
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-20px); /* Fade out and move upwards */
+      }
+    }
+
+    /* Text-specific animations with delay */
+    #text1 {
+      animation: fadeInOut 6s ease-in-out 1; /* Text 1 fades in and out once */
+    }
+
+    #text2 {
+      animation: fadeInOut 6s ease-in-out 1;
+      animation-delay: 6s; /* Delay Text 2 after Text 1 fades */
+    }
+
+    #text3 {
+      animation: fadeInOut 6s ease-in-out 1;
+      animation-delay: 12s; /* Delay Text 3 after Text 2 fades */
+    }
+
+    #text4 {
+      animation: fadeInOut 6s ease-in-out 1;
+      animation-delay: 18s; /* Delay Text 4 after Text 3 fades */
+    }
+
+    #text5 {
+      animation: fadeInOut 6s ease-in-out 1;
+      animation-delay: 24s; /* Delay Text 5 after Text 4 fades */
+    }
+  </style>
+</head>
+<body>
+  <h1 class="dynamic-fade-text" id="text1">Happy 2 years and 2 months Bae 💖</h1>
+  <h2 class="dynamic-fade-text" id="text2">Every day with you feels like a dream, and I’m so grateful for all the memories we’ve created together.</h2>
+  <h3 class="dynamic-fade-text" id="text3">And I’m excited for all the moments yet to come.</h3>
+  <h3 class="dynamic-fade-text" id="text4">We have been through both our best and worst moments, but we are still holding together, side by side.</h3>
+<h3 class="dynamic-fade-text" id="text5">Thank you so much for choosing me and believing in me all this time. </h3>
+
+
+  <script>
+    // Set a timer to redirect after 30 seconds (after all texts fade out)
+    setTimeout(function() {
+      window.location.href = "page2.html"; // Replace with your target URL
+    }, 30000); // 30000 milliseconds = 30 seconds
+  </script>
+</body>
+</html>

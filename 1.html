@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide Button to Next Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    /* Style for the slide button */
+    .slide-btn {
+      padding: 20px 40px;
+      font-size: 18px;
+      background-color: #4CAF50; /* Green background */
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s ease, background-color 0.3s ease;
+    }
+
+    /* Animation when the button is clicked */
+    .slide-btn:active {
+      transform: translateX(150%); /* Slide the button to the right */
+      background-color: #45a049; /* Change color on click */
+    }
+  </style>
+</head>
+<body>
+
+  <button class="slide-btn" onclick="goToNextPage()">Go to Next Page</button>
+
+  <script>
+    function goToNextPage() {
+      // Redirect to the next page (replace "nextpage.html" with your desired URL)
+      window.location.href = "nextpage.html";
+    }
+  </script>
+
+</body>
+</html>

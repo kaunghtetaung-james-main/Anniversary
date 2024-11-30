@@ -1,0 +1,53 @@
+/* Body setup */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Style for the text */
+.dynamic-fade-text {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4CAF50;
+  opacity: 0; /* Start as invisible */
+  margin: 10px 0;
+  position: absolute; /* To center the text */
+}
+
+/* Animation keyframes for fading in from center and fading out */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start below */
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0); /* Move to center */
+  }
+  100% {
+    opacity: 0; /* Fade out completely */
+    transform: translateY(-20px); /* Move upwards */
+  }
+}
+
+/* Stagger animations for each text */
+#text1 {
+  animation: fadeInOut 6s ease-in-out forwards; /* Text 1 fades in and out once */
+}
+
+#text2 {
+  animation: fadeInOut 6s ease-in-out forwards; /* Text 2 fades in and out once */
+  animation-delay: 6s; /* Delay starts after Text 1 */
+}
+
+#text3 {
+  animation: fadeInOut 6s ease-in-out forwards; /* Text 3 fades in and out once */
+  animation-delay: 12s; /* Delay starts after Text 2 */
+}

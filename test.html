@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image in Portrait Frame</title>
+  <style>
+    .portrait-frame {
+      width: 350px; /* Set a fixed width for the frame */
+      height: 600px; /* Fixed height for the portrait frame */
+      padding: 20px; /* Padding to create space between the frame and the image */
+      background-color: #fff; /* White background for the frame */
+      border: 10px solid #000; /* Black border around the frame */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box; /* To include padding and border in the element's total size */
+    }
+    .portrait-frame img {
+      height: 100%; /* Ensure the image takes up the full height of the frame */
+      object-fit: cover; /* Make sure the image covers the frame area */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Our Special Moment</h1>
+  
+  <!-- Portrait frame with image inside -->
+  <div class="portrait-frame">
+    <img src="love.jpeg" alt="A photo of a couple" height="600">
+  </div>
+
+</body>
+</html>

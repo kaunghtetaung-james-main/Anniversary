@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Album Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+      overflow: hidden; /* To prevent scrolling */
+    }
+
+    /* Background YouTube video style */
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      z-index: -1; /* Place the video behind everything else */
+    }
+
+    .gallery-container {
+      position: relative;
+      width: 300px; /* Fixed width to make it square */
+      height: 300px; /* Fixed height to match width */
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the image fills the square without distortion */
+      display: none;
+    }
+
+    .gallery-container img.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background YouTube Video -->
+<iframe class="background-video" src="https://www.youtube.com/embed/cwrCz2Yl5bw?autoplay=1&mute=1&loop=1&playlist=cwrCz2Yl5bw" frameborder="0" allow="autoplay; fullscreen"></iframe>
+
+<!-- Background Audio (Fall in Love with You by Montell Fish) -->
+<audio autoplay loop>
+  <source src="fall in love.mp3" type="audio/mp3">
+  Your browser does not support the audio tag.
+</audio>
+
+<div class="gallery-container">
+  <img src="photo1.heic" alt="Photo 1" class="active">
+  <img src="photo2.heic" alt="Photo 2">
+  <img src="photo3.heic" alt="Photo 3">
+  <img src="photo4.heic" alt="Photo 4">
+  <img src="c1.jpg" alt="Photo 5">
+  <img src="photo5.heic" alt="Photo 6">
+  <img src="photo6.heic" alt="Photo 7">
+  <img src="photo7.heic" alt="Photo 8">
+  <img src="photo8.heic" alt="Photo 9">
+  <img src="photo9.heic" alt="Photo 10">
+</div>
+
+<script>
+  let currentImageIndex = 0;
+  const images = document.querySelectorAll('.gallery-container img');
+
+  // Function to change the image automatically every 2 seconds
+  function autoSwitch() {
+    // Hide the current image
+    images[currentImageIndex].classList.remove('active');
+    
+    // Update the index to the next image
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+
+    // Show the new image
+    images[currentImageIndex].classList.add('active');
+  }
+
+  // Start the automatic image switch every 2 seconds
+  setInterval(autoSwitch, 2000); // 2000 milliseconds = 2 seconds
+</script>
+
+</body>
+</html>
